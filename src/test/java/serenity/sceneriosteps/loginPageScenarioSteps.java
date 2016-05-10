@@ -4,7 +4,6 @@ import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import serenity.pageobjects.GluuPage;
@@ -100,10 +99,14 @@ public class loginPageScenarioSteps extends ScenarioSteps {
         mqp1.memQuestionSubmitButton.click();
     }
 
-    @Step("Then the user should see the {0} error message")
-    public String getErrorMsg(WebElement errorMessage){
-        String error = errorMessage.getText().toString();
-        return error;
+    @Step("Then the user should see the error message")
+    public boolean isErrorMsgDisplayed(){
+        return mqp1.memErrorMessage.isDisplayed();
+
+
+
+
+
     }
 
     //gluu page

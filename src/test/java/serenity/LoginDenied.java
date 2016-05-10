@@ -1,6 +1,5 @@
 package serenity;
 
-
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -10,12 +9,11 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import serenity.sceneriosteps.loginPageScenarioSteps;
 
-
 /**
  * hpe on 06/05/2016.
  */
 @RunWith(SerenityRunner.class)
-public class LoginToHPe {
+public class LoginDenied {
 
     @Managed(driver = "Firefox")
     WebDriver driver;
@@ -23,12 +21,11 @@ public class LoginToHPe {
     @Steps
     loginPageScenarioSteps user;
 
-    //Happy Path
     @Test()
-    @Title("User successfully logs in with a username of Cameron")
-    public void userLogsInWithCameronShouldBeSuccess(){
+    @Title("User login denied without a registered device and a risk recommendation of Deny -(#HPLBS-9)")
+    public void userLoginDeniedWithRiskDeny(){
 
-        String userName = "Cameron";
+        String userName = "thatcher";
 
         //login
         user.enterUsername(userName);
@@ -44,8 +41,6 @@ public class LoginToHPe {
         user.enterMemorableAnswer1();
         user.enterMemorableAnswer2();
         user.clickMemorableQuestionSubmitButton();
-
-        //AssertSuccess
-        user.isGluuPageOpen();
+        user.isErrorMsgDisplayed();
     }
 }

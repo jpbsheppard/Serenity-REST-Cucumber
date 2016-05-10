@@ -33,7 +33,7 @@ public class MemorableQuestionsPage1 extends PageObject{
 
     //error message when device not trusted
     @FindBy(className = "errormsg")
-    private WebElement errorMessage;
+    public WebElement memErrorMessage;
 /*
     //contructor
     public MemorableQuestionsPage1(WebDriver driver) {
