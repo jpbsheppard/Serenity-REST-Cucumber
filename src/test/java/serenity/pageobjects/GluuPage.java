@@ -9,15 +9,7 @@ import org.openqa.selenium.WebElement;
  */
 public class GluuPage extends PageObject{
 
- //  private WebDriver driver;
-
     @FindBy(tagName = "h1")
     public
     WebElement heading;
-
-/*    public GluuPage(WebDriver driver) {
-        this.driver = driver;
-    }
-*/
-
 }

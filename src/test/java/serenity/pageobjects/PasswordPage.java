@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
  * hpe on 07/05/2016.
  */
 public class PasswordPage extends PageObject{
- //   private WebDriver driver;
 
     //locators
 
@@ -35,12 +34,5 @@ public class PasswordPage extends PageObject{
 
     @FindBy(id = "passwordValidationForm:loginButton")
     public WebElement passwordSubmitButton;
-/*
-    //contructor
-    public PasswordPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
-*/
 
 }

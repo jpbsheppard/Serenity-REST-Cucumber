@@ -3,13 +3,12 @@ package serenity.sceneriosteps;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import serenity.pageobjects.GluuPage;
-import serenity.pageobjects.LoginPage;
-import serenity.pageobjects.MemorableQuestionsPage1;
-import serenity.pageobjects.PasswordPage;
+import serenity.pageobjects.*;
 
 
 
@@ -22,6 +21,7 @@ public class loginPageScenarioSteps extends ScenarioSteps {
     LoginPage login;
     PasswordPage pp;
     MemorableQuestionsPage1 mqp1;
+    MemorableQuestionsPage2 mqp2;
     GluuPage gluu;
 
     @Managed(driver = "Firefox")
@@ -102,11 +102,40 @@ public class loginPageScenarioSteps extends ScenarioSteps {
     @Step("Then the user should see the error message")
     public boolean isErrorMsgDisplayed(){
         return mqp1.memErrorMessage.isDisplayed();
+    }
 
+    //memorable questions page 2
+    @Step("Given that the second memorable questions page has loaded")
+    public void waitForMemorableQuestion2Page(){
+        WebDriverWait waitForPasswordCharField2 = new WebDriverWait(driver, 2);
+        waitForPasswordCharField2.until(ExpectedConditions.elementToBeClickable(mqp2.memQuestionField1));
+    }
 
+    @Step("Given the user has entered a correct memorable answer in the first box for the second set of questions")
+    public void enterMemorablePage2Answer1(){
+        WebElement memorableAnswer1LabelText = driver.findElement(By.xpath(".//*[@id='memorableQuestionsForm']/div[1]/div[2]/div[1]/table/tbody/tr[1]/td[1]/label"));
+        String memorableAnswer1Text = memorableAnswer1LabelText.getText();
+        String memorableAnswer1 = memorableAnswer1Text.substring(memorableAnswer1Text.indexOf('(')+1,memorableAnswer1Text.indexOf(')'));
+        mqp2.memQuestionField1.sendKeys(memorableAnswer1);
+    }
 
+    @Step("Given the user has entered a correct memorable answer in the second box for the second set of questions")
+    public void enterMemorablePage2Answer2(){
+        WebElement memorableAnswer2LabelText = driver.findElement(By.xpath(".//*[@id='memorableQuestionsForm']/div[1]/div[2]/div[1]/table/tbody/tr[2]/td[1]/label"));
+        String memorableAnswer2Text = memorableAnswer2LabelText.getText();
+        String memorableAnswer2 = memorableAnswer2Text.substring(memorableAnswer2Text.indexOf('(')+1,memorableAnswer2Text.indexOf(')'));
+        mqp2.memQuestionField2.sendKeys(memorableAnswer2);
+    }
 
+    @Step("Given the user has submitted the answers on the second memorable questions page")
+    public void clickMemorableQuesionPage2SubmitButton(){
+        mqp2.memQuestionSubmitButton.click();
+    }
 
+    @Step("Then the user should see the {0} error message")
+    public String getErrorMsg(WebElement errorMessage){
+        String error = errorMessage.getText().toString();
+        return error;
     }
 
     //gluu page
@@ -115,7 +144,6 @@ public class loginPageScenarioSteps extends ScenarioSteps {
     public boolean isGluuPageOpen(){
         //Assertion
         return gluu.heading.getText().toString().contains("Welcome to your Gluu Identity Appliance!");
-
     }
 
     @Step("Then the Gluu page to open")

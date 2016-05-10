@@ -9,8 +9,6 @@ import org.openqa.selenium.WebElement;
  */
 public class MemorableQuestionsPage1 extends PageObject{
 
-  //  private WebDriver driver;
-
     //locators
 
     //Memorable Question1 field
@@ -34,12 +32,5 @@ public class MemorableQuestionsPage1 extends PageObject{
     //error message when device not trusted
     @FindBy(className = "errormsg")
     public WebElement memErrorMessage;
-/*
-    //contructor
-    public MemorableQuestionsPage1(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
-*/
 
 }
