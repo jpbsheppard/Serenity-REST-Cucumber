@@ -15,6 +15,7 @@ public class MemorableQuestionsPage1 extends PageObject{
     @FindBy(id = "memorableQuestionsForm:memorableQuestionAnswer1")
     public WebElement memQuestionField1;
 
+    //memorable question1 label
     @FindBy(xpath = ".//*[@id='memorableQuestionsForm']/div[1]/div[2]/div[1]/table/tbody/tr[1]/td[1]/label")
     public WebElement memQuestionLabel1;
 
@@ -22,6 +23,7 @@ public class MemorableQuestionsPage1 extends PageObject{
     @FindBy(id = "memorableQuestionsForm:memorableQuestionAnswer2")
     public WebElement memQuestionField2;
 
+    //memorable question2 label
     @FindBy(xpath = ".//*[@id='memorableQuestionsForm']/div[1]/div[2]/div[1]/table/tbody/tr[2]/td[1]/label")
     public WebElement memQuestionLabel2;
 

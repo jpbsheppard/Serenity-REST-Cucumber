@@ -8,7 +8,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pageObjects.UserDetailValidationPage;
 import serenity.pageobjects.*;
 
 /**
@@ -47,28 +46,28 @@ public class loginPageScenarioSteps extends ScenarioSteps {
 
     @Step("Given that the user has entered the first password character")
     public void setPasswordFormEntry1(){
-        String C1 = pp.passwordlabel1.getText();
+        String C1 = pp.passwordPageLabel1.getText();
         pp.passwordFormEntry1.clear();
         pp.passwordFormEntry1.sendKeys(C1);
     }
 
     @Step("Given that the user has entered the second password character")
     public void setPasswordFormEntry2() {
-        String C2 = pp.passwordlabel2.getText();
+        String C2 = pp.passwordPageLabel2.getText();
         pp.passwordFormEntry2.clear();
         pp.passwordFormEntry2.sendKeys(C2);
     }
 
     @Step("Given that the user has entered the third password character")
     public void setPasswordFormEntry3() {
-        String C3 = pp.passwordlabel3.getText();
+        String C3 = pp.passwordPageLabel3.getText();
         pp.passwordFormEntry3.clear();
         pp.passwordFormEntry3.sendKeys(C3);
     }
 
     @Step("When the user has clicked submit on the password page")
     public void clickSubmitButton(){
-        pp.passwordSubmitButton.click();
+        pp.passwordPageSubmitButton.click();
     }
 
     //memorable questions page 1
@@ -153,20 +152,26 @@ public class loginPageScenarioSteps extends ScenarioSteps {
 
     //User Detail Validation Page
     @Step("Given the user entered a surname")
-    public void enterSurname(){}
+    public void enterSurname(String surname){
+        udvp.surnameEntryField.sendKeys(surname);
+    }
 
     @Step("Given the user entered a date of birth")
-    public void enterDOB(){}
+    public void enterDOB(String dob){
+        udvp.dobEntryField.sendKeys(dob);
+    }
 
     @Step("Given the user has entered a first password answer")
-    private void enterDetailValidationAnswer1(){}
+    public void enterDetailValidationAnswer1(){
+
+    }
 
     @Step("Given the user has entered a second password answer")
-    private void enterDetailValidationAnswer2(){}
+    public void enterDetailValidationAnswer2(){}
 
     @Step("Given the user has entered a third password answer")
-    private void enterDetailValidationAnswer3(){}
+    public void enterDetailValidationAnswer3(){}
 
     @Step("When the user clicks submit on the Detail Validation Page")
-    private void clickOnTheSubmitButtonForDetailValidation(){}
+    public void clickOnTheSubmitButtonForDetailValidation(){}
 }
