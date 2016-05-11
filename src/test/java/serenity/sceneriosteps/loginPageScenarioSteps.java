@@ -3,7 +3,6 @@ package serenity.sceneriosteps;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -111,16 +110,14 @@ public class loginPageScenarioSteps extends ScenarioSteps {
 
     @Step("Given the user has entered a correct memorable answer in the first box for the second set of questions")
     public void enterMemorablePage2Answer1(){
-        WebElement memorableAnswer1LabelText = driver.findElement(By.xpath(".//*[@id='memorableQuestionsForm']/div[1]/div[2]/div[1]/table/tbody/tr[1]/td[1]/label"));
-        String memorableAnswer1Text = memorableAnswer1LabelText.getText();
+        String memorableAnswer1Text = mqp2.memQuestionAnswerLabel1.getText();
         String memorableAnswer1 = memorableAnswer1Text.substring(memorableAnswer1Text.indexOf('(')+1,memorableAnswer1Text.indexOf(')'));
         mqp2.memQuestionField1.sendKeys(memorableAnswer1);
     }
 
     @Step("Given the user has entered a correct memorable answer in the second box for the second set of questions")
     public void enterMemorablePage2Answer2(){
-        WebElement memorableAnswer2LabelText = driver.findElement(By.xpath(".//*[@id='memorableQuestionsForm']/div[1]/div[2]/div[1]/table/tbody/tr[2]/td[1]/label"));
-        String memorableAnswer2Text = memorableAnswer2LabelText.getText();
+        String memorableAnswer2Text = mqp2.memQuestionAnswerlabel2.getText();
         String memorableAnswer2 = memorableAnswer2Text.substring(memorableAnswer2Text.indexOf('(')+1,memorableAnswer2Text.indexOf(')'));
         mqp2.memQuestionField2.sendKeys(memorableAnswer2);
     }
@@ -163,15 +160,25 @@ public class loginPageScenarioSteps extends ScenarioSteps {
 
     @Step("Given the user has entered a first password answer")
     public void enterDetailValidationAnswer1(){
-
+        String memorableAnswerText = udvp.userDetailValidationFormLabel1.getText();
+        String memorableAnswer = memorableAnswerText.substring(memorableAnswerText.indexOf('(')+1,memorableAnswerText.indexOf(')'));
+        udvp.userDetailValidationFormAnswer1.sendKeys(memorableAnswer);
     }
 
     @Step("Given the user has entered a second password answer")
-    public void enterDetailValidationAnswer2(){}
+    public void enterDetailValidationAnswer2(){
+        String memorableAnswerText = udvp.userDetailValidationFormlabel2.getText();
+        String memorableAnswer = memorableAnswerText.substring(memorableAnswerText.indexOf('(')+1,memorableAnswerText.indexOf(')'));
+        udvp.userDetailValidationFormAnswer2.sendKeys(memorableAnswer);
+    }
 
     @Step("Given the user has entered a third password answer")
-    public void enterDetailValidationAnswer3(){}
+    public void enterDetailValidationAnswer3(){
+        String memorableAnswerText = udvp.userDetailValidationFormlabel3.getText();
+        String memorableAnswer = memorableAnswerText.substring(memorableAnswerText.indexOf('(')+1,memorableAnswerText.indexOf(')'));
+        udvp.userDetailValidationFormAnswer3.sendKeys(memorableAnswer);
+    }
 
     @Step("When the user clicks submit on the Detail Validation Page")
-    public void clickOnTheSubmitButtonForDetailValidation(){}
+    public void clickOnTheSubmitButtonForDetailValidation(){udvp.userDetailValidationSubmitButton.click();}
 }
