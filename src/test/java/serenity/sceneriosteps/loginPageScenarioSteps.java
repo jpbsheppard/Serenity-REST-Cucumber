@@ -160,23 +160,23 @@ public class loginPageScenarioSteps extends ScenarioSteps {
 
     @Step("Given the user has entered a first password answer")
     public void enterDetailValidationAnswer1(){
-        String memorableAnswerText = udvp.userDetailValidationFormLabel1.getText();
-        String memorableAnswer = memorableAnswerText.substring(memorableAnswerText.indexOf('(')+1,memorableAnswerText.indexOf(')'));
-        udvp.userDetailValidationFormAnswer1.sendKeys(memorableAnswer);
+        String labelText = udvp.userDetailValidationFormLabel1.getText();
+        //String memorableAnswer = memorableAnswerText.substring(memorableAnswerText.indexOf('(')+1,memorableAnswerText.indexOf(')'));
+        udvp.userDetailValidationFormAnswer1.sendKeys(labelText);
     }
 
     @Step("Given the user has entered a second password answer")
     public void enterDetailValidationAnswer2(){
-        String memorableAnswerText = udvp.userDetailValidationFormlabel2.getText();
-        String memorableAnswer = memorableAnswerText.substring(memorableAnswerText.indexOf('(')+1,memorableAnswerText.indexOf(')'));
-        udvp.userDetailValidationFormAnswer2.sendKeys(memorableAnswer);
+        String labelText = udvp.userDetailValidationFormlabel2.getText();
+       // String memorableAnswer = memorableAnswerText.substring(memorableAnswerText.indexOf('(')+1,memorableAnswerText.indexOf(')'));
+        udvp.userDetailValidationFormAnswer2.sendKeys(labelText);
     }
 
     @Step("Given the user has entered a third password answer")
     public void enterDetailValidationAnswer3(){
-        String memorableAnswerText = udvp.userDetailValidationFormlabel3.getText();
-        String memorableAnswer = memorableAnswerText.substring(memorableAnswerText.indexOf('(')+1,memorableAnswerText.indexOf(')'));
-        udvp.userDetailValidationFormAnswer3.sendKeys(memorableAnswer);
+        String labelText = udvp.userDetailValidationFormlabel3.getText();
+       // String memorableAnswer = memorableAnswerText.substring(memorableAnswerText.indexOf('(')+1,memorableAnswerText.indexOf(')'));
+        udvp.userDetailValidationFormAnswer3.sendKeys(labelText);
     }
 
     @Step("When the user clicks submit on the Detail Validation Page")

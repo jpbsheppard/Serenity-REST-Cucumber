@@ -13,7 +13,7 @@ import serenity.sceneriosteps.loginPageScenarioSteps;
  * hpe on 06/05/2016.
  */
 @RunWith(SerenityRunner.class)
-public class LoginDenied {
+public class LoginDeniedWithRiskofDenied {
 
     @Managed(driver = "Firefox")
     WebDriver driver;

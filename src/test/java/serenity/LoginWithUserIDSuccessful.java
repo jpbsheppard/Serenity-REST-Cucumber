@@ -22,8 +22,8 @@ public class LoginWithUserIDSuccessful {
     loginPageScenarioSteps user;
 
     @Test()
-    @Title("User login denied without a registered device and a risk recommendation of Deny -(#HPLBS-9)")
-    public void userLoginDeniedWithRiskDeny(){
+    @Title("User login with userID is successful -(#HPLBS-9)")
+    public void loginWithUserIDSuccessful(){
 
         String userName = "007";
 
@@ -41,6 +41,5 @@ public class LoginWithUserIDSuccessful {
 
         //gluu page should appear
         user.isGluuPageOpen();
-
     }
 }
