@@ -2,7 +2,6 @@ package serenity.sceneriosteps;
 
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.steps.ScenarioSteps;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,7 +11,7 @@ import serenity.pageobjects.*;
 /**
  * hpe on 08/05/2016.
  */
-public class loginPageScenarioSteps extends ScenarioSteps {
+public class ScenarioStepDefinitions extends net.thucydides.core.steps.ScenarioSteps {
 
     LoginPage login;
     PasswordPage pp;

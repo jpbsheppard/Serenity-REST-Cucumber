@@ -2,6 +2,7 @@ package serenity;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
+import net.thucydides.core.annotations.Pending;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.annotations.Title;
 import org.junit.Test;
@@ -10,10 +11,10 @@ import org.openqa.selenium.WebDriver;
 import serenity.sceneriosteps.ScenarioStepDefinitions;
 
 /**
- * hpe on 06/05/2016.
+ * hpe on 11/05/2016.
  */
 @RunWith(SerenityRunner.class)
-public class LoginWithRegisteredDevice {
+public class passwordRetryPolicy {
 
     @Managed(driver = "Firefox")
     WebDriver driver;
@@ -21,24 +22,25 @@ public class LoginWithRegisteredDevice {
     @Steps
     ScenarioStepDefinitions user;
 
-    //Happy Path
+    @Pending
     @Test()
-    @Title("User logs in successfully with a registered device -(#HPLBS-9)")
-    public void userLogsInSuccessfullyWithARegisteredDevice(){
-
-        String userName = "churchill";
+    @Title("Registered user fails retry policy on password page results in account lock")
+    public void registeredUserFailsRetryPolicyGetsAccountLocked(){
+        int retryTimes = 3;
+        String userName = "Cameron";
 
         //login
+
         user.enterUsername(userName);
         user.clickLoginButton();
 
-        //password page
-        user.setPasswordFormEntry1();
-        user.setPasswordFormEntry2();
-        user.setPasswordFormEntry3();
-        user.clickSubmitButton();
-
-        //AssertSuccess
-        user.isGluuPageOpen();
+        for (int i=0;i<=3;i++){
+            user.setPasswordFormEntry1();
+            user.setPasswordFormEntry2();
+            user.setPasswordFormEntry3();
+            user.clickSubmitButton();
+            i = i +1;
+        }
     }
+
 }

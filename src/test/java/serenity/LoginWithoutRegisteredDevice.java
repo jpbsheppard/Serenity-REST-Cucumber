@@ -7,7 +7,7 @@ import net.thucydides.core.annotations.Title;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-import serenity.sceneriosteps.loginPageScenarioSteps;
+import serenity.sceneriosteps.ScenarioStepDefinitions;
 
 /**
  * hpe on 06/05/2016.
@@ -19,7 +19,7 @@ public class LoginWithoutRegisteredDevice {
     WebDriver driver;
 
     @Steps
-    loginPageScenarioSteps user;
+    ScenarioStepDefinitions user;
 
     @Test()
     @Title("User logs in successfully without a registered device with a risk recommendation of Allow -(#HPLBS-9)")
