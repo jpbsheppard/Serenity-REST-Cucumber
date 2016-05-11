@@ -8,10 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pageObjects.UserDetailValidationPage;
 import serenity.pageobjects.*;
-
-
-
 
 /**
  * hpe on 08/05/2016.
@@ -23,10 +21,12 @@ public class loginPageScenarioSteps extends ScenarioSteps {
     MemorableQuestionsPage1 mqp1;
     MemorableQuestionsPage2 mqp2;
     GluuPage gluu;
+    UserDetailValidationPage udvp;
 
     @Managed(driver = "Firefox")
     WebDriver driver;
 
+    //login page
     @Step("When the user has clicked the login button")
     public void clickLoginButton(){
         login.loginButton.click();
@@ -39,7 +39,6 @@ public class loginPageScenarioSteps extends ScenarioSteps {
     }
 
     //password page
-
     @Step("Given that the password page has opened")
     public void waitForPasswordPage(){
         WebDriverWait waitForPasswordCharField = new WebDriverWait(driver, 2);
@@ -151,4 +150,23 @@ public class loginPageScenarioSteps extends ScenarioSteps {
         WebDriverWait waitUntilGluuPageLoads = new WebDriverWait(driver, 5);
         waitUntilGluuPageLoads.until(ExpectedConditions.titleIs("Gluu"));
     }
+
+    //User Detail Validation Page
+    @Step("Given the user entered a surname")
+    public void enterSurname(){}
+
+    @Step("Given the user entered a date of birth")
+    public void enterDOB(){}
+
+    @Step("Given the user has entered a first password answer")
+    private void enterDetailValidationAnswer1(){}
+
+    @Step("Given the user has entered a second password answer")
+    private void enterDetailValidationAnswer2(){}
+
+    @Step("Given the user has entered a third password answer")
+    private void enterDetailValidationAnswer3(){}
+
+    @Step("When the user clicks submit on the Detail Validation Page")
+    private void clickOnTheSubmitButtonForDetailValidation(){}
 }
