@@ -27,22 +27,15 @@ public class LoginWithoutRegisteredDevice {
 
         String userName = "blair";
 
-        //login
+        //Given
         user.enterUsername(userName);
         user.clickLoginButton();
 
-        //password page
-        user.setPasswordFormEntry1();
-        user.setPasswordFormEntry2();
-        user.setPasswordFormEntry3();
-        user.clickSubmitButton();
+        //When
+        user.enterPassword();
+        user.enterMemorableAnswers();
 
-        //memorable questions
-        user.enterMemorableAnswer1();
-        user.enterMemorableAnswer2();
-        user.clickMemorableQuestionSubmitButton();
-
-        //AssertSuccess
+        //Then
         user.isGluuPageOpen();
     }
 
@@ -52,22 +45,15 @@ public class LoginWithoutRegisteredDevice {
 
         String userName = "cameron";
 
-        //login
+        //Given
         user.enterUsername(userName);
         user.clickLoginButton();
 
-        //password page
-        user.setPasswordFormEntry1();
-        user.setPasswordFormEntry2();
-        user.setPasswordFormEntry3();
-        user.clickSubmitButton();
+        //When
+        user.enterPassword();
+        user.enterMemorableAnswers();
 
-        //memorable questions
-        user.enterMemorableAnswer1();
-        user.enterMemorableAnswer2();
-        user.clickMemorableQuestionSubmitButton();
-
-        //AssertSuccess
+        //Then
         user.isGluuPageOpen();
     }
 }

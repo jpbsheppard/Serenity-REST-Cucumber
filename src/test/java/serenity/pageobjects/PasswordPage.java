@@ -39,4 +39,8 @@ public class PasswordPage extends PageObject{
     @FindBy(id = "passwordValidationForm:loginButton")
     public WebElement passwordPageSubmitButton;
 
+    //errormsg
+    @FindBy(className = "errormsg")
+    public WebElement errorMessage;
+
 }

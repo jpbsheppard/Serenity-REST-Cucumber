@@ -28,17 +28,14 @@ public class LoginWithRegisteredDevice {
 
         String userName = "churchill";
 
-        //login
+        //Given
         user.enterUsername(userName);
         user.clickLoginButton();
 
-        //password page
-        user.setPasswordFormEntry1();
-        user.setPasswordFormEntry2();
-        user.setPasswordFormEntry3();
-        user.clickSubmitButton();
+        //When
+        user.enterPassword();
 
-        //AssertSuccess
+        //Then
         user.isGluuPageOpen();
     }
 }

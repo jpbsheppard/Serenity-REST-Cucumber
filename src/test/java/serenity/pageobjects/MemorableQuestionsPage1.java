@@ -33,6 +33,6 @@ public class MemorableQuestionsPage1 extends PageObject{
 
     //error message when device not trusted
     @FindBy(className = "errormsg")
-    public WebElement memErrorMessage;
+    public WebElement errorMessage;
 
 }

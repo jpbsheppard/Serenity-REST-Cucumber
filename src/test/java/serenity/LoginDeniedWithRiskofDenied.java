@@ -27,20 +27,15 @@ public class LoginDeniedWithRiskofDenied {
 
         String userName = "thatcher";
 
-        //login
+        //Given
         user.enterUsername(userName);
         user.clickLoginButton();
 
-        //password page
-        user.setPasswordFormEntry1();
-        user.setPasswordFormEntry2();
-        user.setPasswordFormEntry3();
-        user.clickSubmitButton();
+        //When
+        user.enterPassword();
+        user.enterMemorableAnswers();
 
-        //memorable questions
-        user.enterMemorableAnswer1();
-        user.enterMemorableAnswer2();
-        user.clickMemorableQuestionSubmitButton();
-        user.isErrorMsgDisplayed();
+        //Then
+        user.assertErrorMessage("password", "Your device is not trusted. Authentication failed.");
     }
 }

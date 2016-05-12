@@ -27,11 +27,11 @@ public class LoginWithUserIDSuccessful {
 
         String userName = "007";
 
-        //login
+        //Given
         user.enterUsername(userName);
         user.clickLoginButton();
 
-        //detailValidation page
+        //When
         user.enterSurname("bond");
         user.enterDOB("01/01/1900");
         user.enterDetailValidationAnswer1();
@@ -39,7 +39,7 @@ public class LoginWithUserIDSuccessful {
         user.enterDetailValidationAnswer3();
         user.clickOnTheSubmitButtonForDetailValidation();
 
-        //gluu page should appear
+        //Then
         user.isGluuPageOpen();
     }
 }

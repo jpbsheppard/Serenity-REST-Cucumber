@@ -2,7 +2,6 @@ package serenity;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
-import net.thucydides.core.annotations.Pending;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.annotations.Title;
 import org.junit.Test;
@@ -22,25 +21,52 @@ public class passwordRetryPolicy {
     @Steps
     ScenarioStepDefinitions user;
 
-    @Pending
+    @Test()
+    @Title("Username and password do not match Error message shown when password incorrect")
+    public void usernamePasswordDoNotMatchError(){
+        String userName = "Cameron";
+
+        //Given
+        user.enterUsername(userName);
+        user.clickLoginButton();
+        //When
+        user.enterIncorrectPassword("5", "password");
+        //Then
+        user.assertErrorMessage("password", "The username and password do not match.");
+
+    }
+
+    @Test()
+    @Title("Error thrown when validating users with incorrect memorable questions")
+    public void memorableQuestionsErrorWhenIncorrect(){
+        String userName = "Cameron";
+
+        //Given
+        user.enterUsername(userName);
+        user.clickLoginButton();
+        //When
+        user.enterPassword();
+        user.enterIncorrectPassword("5", "memorableQuestionsPage1");
+        user.enterIncorrectPassword("5", "memorableQuestionsPage1");
+        //Then
+        user.assertErrorMessage("password", "Your answers do not match with our records. Authentication Failed.");
+    }
+
     @Test()
     @Title("Registered user fails retry policy on password page results in account lock")
     public void registeredUserFailsRetryPolicyGetsAccountLocked(){
-        int retryTimes = 3;
         String userName = "Cameron";
 
-        //login
-
+        //Given
         user.enterUsername(userName);
         user.clickLoginButton();
 
-        for (int i=0;i<=3;i++){
-            user.setPasswordFormEntry1();
-            user.setPasswordFormEntry2();
-            user.setPasswordFormEntry3();
-            user.clickSubmitButton();
-            i = i +1;
+        //When
+        for (int i=0;i<3;i++){
+            user.enterIncorrectPassword("4", "password");
         }
+        //Then
+        user.assertErrorMessage("password", "The username and password do not match.");
     }
 
 }

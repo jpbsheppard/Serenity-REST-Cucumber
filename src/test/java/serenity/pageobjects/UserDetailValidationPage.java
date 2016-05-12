@@ -55,5 +55,9 @@ public class UserDetailValidationPage extends PageObject{
     //Detail Validation form Submit Button
     @FindBy(id = "userDetailValidationForm:loginButton")
     public WebElement userDetailValidationSubmitButton;
+
+    //error message when device not trusted
+    @FindBy(className = "errormsg")
+    public WebElement errorMessage;
 }
 
