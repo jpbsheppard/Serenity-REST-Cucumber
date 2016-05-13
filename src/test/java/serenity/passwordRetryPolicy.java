@@ -66,7 +66,7 @@ public class passwordRetryPolicy {
             user.enterIncorrectPassword("4", "password");
         }
         //Then
-        user.assertErrorMessage("password", "The username and password do not match.");
+        user.assertErrorMessage("password", "Too many failed attempts. Your account has been locked.");
     }
 
 }
