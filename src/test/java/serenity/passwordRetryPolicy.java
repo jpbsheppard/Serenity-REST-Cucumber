@@ -2,6 +2,7 @@ package serenity;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
+import net.thucydides.core.annotations.Pending;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.annotations.Title;
 import org.junit.Test;
@@ -47,11 +48,31 @@ public class passwordRetryPolicy {
         //When
         user.enterPassword();
         user.enterIncorrectPassword("5", "memorableQuestionsPage1");
-        user.enterIncorrectPassword("5", "memorableQuestionsPage1");
+        user.enterIncorrectPassword("5", "memorableQuestionsPage2");
         //Then
         user.assertErrorMessage("password", "Your answers do not match with our records. Authentication Failed.");
     }
 
+    @Test()
+    @Title("User successfully logs in after answering second set of memorable questions")
+    public void successfulLoginOnSecondAttemptMemorableQuestions(){
+        String userName = "Cameron";
+
+        //Given
+        user.enterUsername(userName);
+        user.clickLoginButton();
+        //When
+        user.enterPassword();
+        user.enterIncorrectPassword("5", "memorableQuestionsPage1");
+        user.enterMemorablePage2Answer1();
+        user.enterMemorablePage2Answer2();
+        user.clickMemorableQuesionPage2SubmitButton();
+        //Then
+        user.isGluuPageOpen();
+    }
+
+    //Cannot unlock users so test cannot be run currently in an automated fashion
+    @Pending
     @Test()
     @Title("Registered user fails retry policy on password page results in account lock")
     public void registeredUserFailsRetryPolicyGetsAccountLocked(){
