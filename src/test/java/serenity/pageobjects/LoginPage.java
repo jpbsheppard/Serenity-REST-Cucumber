@@ -12,7 +12,7 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage extends PageObject {
     private WebDriver driver;
 
-    private static String loginPageUrl = "https://gluuidp.hp.clients.amido.com/";
+    private static String loginPageUrl = "https://ip-172-31-42-232.eu-west-1.compute.internal/";
 
     //locators
 

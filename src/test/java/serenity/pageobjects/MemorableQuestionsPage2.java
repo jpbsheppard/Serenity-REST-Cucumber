@@ -19,7 +19,7 @@ public class MemorableQuestionsPage2 extends PageObject{
     public WebElement memQuestionField1;
 
     //question 1 label
-    @FindBy(xpath = "WebElement memorableAnswer1LabelText = driver.findElement(By.xpath(\".//*[@id='memorableQuestionsForm']/div[1]/div[2]/div[1]/table/tbody/tr[1]/td[1]/label\"));")
+    @FindBy(xpath = "//*[@id=\"memorableQuestionsForm\"]/div[1]/div[2]/div[1]/table/tbody/tr[1]/td[1]/label")
     public WebElement memQuestionAnswerLabel1;
 
     //Memorable Question2 field
@@ -27,7 +27,7 @@ public class MemorableQuestionsPage2 extends PageObject{
     public WebElement memQuestionField2;
 
     //question 2 label
-    @FindBy(xpath = "WebElement memorableAnswer2LabelText = driver.findElement(By.xpath(\".//*[@id='memorableQuestionsForm']/div[1]/div[2]/div[1]/table/tbody/tr[2]/td[1]/label\"));")
+    @FindBy(xpath = "//*[@id=\"memorableQuestionsForm\"]/div[1]/div[2]/div[1]/table/tbody/tr[2]/td[1]/label")
     public WebElement memQuestionAnswerlabel2;
 
     //Memorable Question submit button
