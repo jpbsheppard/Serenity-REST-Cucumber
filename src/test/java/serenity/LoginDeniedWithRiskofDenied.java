@@ -24,9 +24,6 @@ public class LoginDeniedWithRiskofDenied {
     @Test()
     @Title("User login denied without a registered device and a risk recommendation of Deny -(#HPLBS-9)")
     public void userLoginDeniedWithRiskDeny(){
-        
-        
-
         String userName = "thatcher";
 
         //Given

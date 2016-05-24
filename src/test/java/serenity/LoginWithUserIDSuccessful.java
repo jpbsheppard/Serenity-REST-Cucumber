@@ -33,7 +33,7 @@ public class LoginWithUserIDSuccessful {
 
         //When
         user.enterSurname("bond");
-        user.enterDOB("01/01/1900");
+        user.enterDOB("1900/01/01");
         user.enterDetailValidationAnswer1();
         user.enterDetailValidationAnswer2();
         user.enterDetailValidationAnswer3();
