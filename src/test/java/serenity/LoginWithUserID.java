@@ -13,7 +13,7 @@ import serenity.sceneriosteps.ScenarioStepDefinitions;
  * hpe on 11/05/2016.
  */
 @RunWith(SerenityRunner.class)
-public class LoginWithUserIDSuccessful {
+public class LoginWithUserID {
 
     @Managed(driver = "Firefox")
     WebDriver driver;
@@ -41,5 +41,27 @@ public class LoginWithUserIDSuccessful {
 
         //Then
         user.isGluuPageOpen();
+    }
+
+    @Test()
+    @Title("User login with userID is successful -(#HPLBS-9)")
+    public void loginWithUserIDUnsuccessful(){
+
+        String userName = "006";
+
+        //Given
+        user.enterUsername(userName);
+        user.clickLoginButton();
+
+        //When
+        user.enterSurname("bond");
+        user.enterDOB("1900/01/01");
+        user.enterDetailValidationAnswer1();
+        user.enterDetailValidationAnswer2();
+        user.enterDetailValidationAnswer3();
+        user.clickOnTheSubmitButtonForDetailValidation();
+
+        //Then
+        user.assertErrorMessage("detailValidation", "The details provided do not match with our records. Please try again.");
     }
 }
