@@ -1,0 +1,26 @@
+Running Tests
+-------------
+
+Tests are front end tests that look at the login flow through the GUI.
+
+Project is built in Maven and uses Serenity BDD for reporting
+
+Prerequisites
+-------------
+
+Tests assume a number of users exist in the system and are active (i.e. not inactive or locked)
+For users see ticket in Jira #HPLBS-9
+
+Jira Integration
+----------------
+
+For Jira integration add the details of a registered user in the serenity.properties file.  This will let the reports
+add a link to the ticket in Jira.  For two way integration the reports link from running in conjunction can be added as
+comments to the test that will give running feedback as to whether tests are passing or failing.
+
+Running
+-------
+
+To run the tests it is a maven command from the terminal or during the integration phase of the build.
+
+To run its a mvn clean verify
