@@ -71,7 +71,7 @@ public class passwordRetryPolicy {
         user.isGluuPageOpen();
     }
 
-    //Cannot unlock users so test cannot be run currently in an automated fashion
+    //Cannot unlock users so tests cannot be run currently in an automated fashion
     @Pending
     @Test()
     @Title("Registered user fails retry policy on password page results in account lock")
@@ -90,7 +90,7 @@ public class passwordRetryPolicy {
         user.assertErrorMessage("password", "Too many failed attempts. Your account has been locked.");
     }
 
-
+    @Pending
     @Test()
     @Title("User is denied login with a locked account")
     public void userIsDeniedLoginWithALockedAccount(){
