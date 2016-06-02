@@ -254,6 +254,10 @@ public class ScenarioStepDefinitions extends net.thucydides.core.steps.ScenarioS
                 text = udvp.errorMessage.getText().toString();
                 assertThat(text,containsString(message));
                 break;
+            case "loginPage":
+                text = login.errorMessage.getText().toString();
+                assertThat(text,containsString(message));
+                break;
             default:
                 throw new IllegalArgumentException("Invalid page");
         }

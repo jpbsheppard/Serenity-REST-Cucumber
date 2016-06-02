@@ -24,6 +24,9 @@ public class LoginPage extends PageObject {
     @FindBy(id = "loginForm:loginButton")
     public WebElement loginButton;
 
+    //error message when device not trusted
+    @FindBy(className = "errormsg")
+    public WebElement errorMessage;
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;

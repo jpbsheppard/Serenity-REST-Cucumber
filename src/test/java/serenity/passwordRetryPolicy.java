@@ -90,4 +90,20 @@ public class passwordRetryPolicy {
         user.assertErrorMessage("password", "Too many failed attempts. Your account has been locked.");
     }
 
+
+    @Test()
+    @Title("User is denied login with a locked account")
+    public void userIsDeniedLoginWithALockedAccount(){
+        String userName = "Cameron";
+
+        //Given
+        user.enterUsername(userName);
+
+        //When
+        user.clickLoginButton();
+
+        //Then
+        user.assertErrorMessage("loginPage", "User account is locked. Please contact customer services.");
+    }
+
 }
