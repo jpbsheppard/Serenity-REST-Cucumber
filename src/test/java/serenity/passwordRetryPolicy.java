@@ -16,7 +16,7 @@ import serenity.sceneriosteps.ScenarioStepDefinitions;
 @RunWith(SerenityRunner.class)
 public class passwordRetryPolicy {
 
-    @Managed(driver = "Firefox")
+    @Managed(driver = "PhantomJS")
     WebDriver driver;
 
     @Steps

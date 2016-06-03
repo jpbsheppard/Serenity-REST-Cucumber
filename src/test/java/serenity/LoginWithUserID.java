@@ -15,7 +15,7 @@ import serenity.sceneriosteps.ScenarioStepDefinitions;
 @RunWith(SerenityRunner.class)
 public class LoginWithUserID {
 
-    @Managed(driver = "Firefox")
+    @Managed(driver = "PhantomJS")
     WebDriver driver;
 
     @Steps

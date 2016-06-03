@@ -11,6 +11,8 @@ Prerequisites
 Tests assume a number of users exist in the system and are active (i.e. not inactive or locked)
 For users see ticket in Jira #HPLBS-9
 
+Currently set to run headless using PhantomJS.  PhantomJS must be installed and .exe on PATH
+
 Jira Integration
 ----------------
 
@@ -25,6 +27,10 @@ Environment URL is set in the LoginPage page object
 
 Running
 -------
+
+Tests run headless on PhantomJS currently.  To switch to Firefox in each test class change
+
+@Managed(driver = "PhantomJS") --> @Managed(driver = "Firefox")
 
 To run the tests it is a maven command from the terminal or during the integration phase of the build.
 

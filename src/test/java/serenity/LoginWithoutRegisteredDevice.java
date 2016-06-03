@@ -15,7 +15,7 @@ import serenity.sceneriosteps.ScenarioStepDefinitions;
 @RunWith(SerenityRunner.class)
 public class LoginWithoutRegisteredDevice {
 
-    @Managed(driver = "Firefox")
+    @Managed(driver = "PhantomJS")
     WebDriver driver;
 
     @Steps
