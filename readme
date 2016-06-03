@@ -18,6 +18,11 @@ For Jira integration add the details of a registered user in the serenity.proper
 add a link to the ticket in Jira.  For two way integration the reports link from running in conjunction can be added as
 comments to the test that will give running feedback as to whether tests are passing or failing.
 
+Environment Entry Point
+-----------------------
+
+Environment URL is set in the LoginPage page object
+
 Running
 -------
 
